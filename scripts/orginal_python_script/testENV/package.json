@@ -1,0 +1,23 @@
+{
+  "name": "testenv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@types/cheerio": "^0.22.35",
+    "@types/node": "^24.10.1",
+    "axios": "^1.13.2",
+    "cheerio": "^1.1.2",
+    "expo": "^54.0.25",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,342 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <script src="ajax2.js"></script>
+    <title>[252]公車動態資訊</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <link rel="shortcut icon" href="#"/>
+    <script language="JavaScript">
+		//GoogleAnalysisCount
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36595213-1']);
+		_gaq.push(['_setCustomVar',1, 'RouteName', '252', 3]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+		var PathAttrSymbolMap = {};
+		var VirtualStopMap = {}; 
+		var TTEMap = {'0':'進站中','':'未發車','-1':'未發車','-2':'交管不停','-3':'末班已過','-4':'今日未營運'};
+		var Timer = null;
+	    var divIndex=0;
+	    var PathAttrFirstStopIdMap = {"10746":"216049","162384":"216049"}; 
+	    
+    	function switchDiv() {
+    		if (document.getElementById("SDIV"+divIndex))
+    			{
+    			if (document.getElementById("IgnoreCheck"+divIndex))
+    				if (document.getElementById("IgnoreCheck"+divIndex).checked)
+    					localStorage.setItem("PDANewsAlertIgnoew"+document.getElementById("IgnoreCheck"+divIndex).value, "Yes");
+    			document.getElementById("SDIV"+divIndex).style.display='none';
+    			};
+    		divIndex++;
+    		while (document.getElementById("IgnoreCheck"+divIndex) 
+    				&& localStorage.getItem("PDANewsAlertIgnoew"+document.getElementById("IgnoreCheck"+divIndex).value)=="Yes")
+    		{divIndex++;};
+    		
+    		if (document.getElementById("SDIV"+divIndex))
+    			document.getElementById("SDIV"+divIndex).style.display='';
+    	}
+    	
+        function queryDyna() {
+        	if (Timer!=null) clearTimeout(Timer);
+        	http('GET', 'RouteDyna?routeid=10746', processDyna);
+        }
+        
+    	function processDyna(data) {
+			if (data.UpdateTime)
+				{
+				document.getElementById("spnUpdateTime").innerHTML= data.UpdateTime.substring(11);
+				
+				var okDataMS=Date.parse(data.UpdateTime.substr(0,10)+"T"+data.UpdateTime.substring(11).replace(/&#x3a;/g,":"))-1200000; // 20分
+				var busmapPre = {};
+				var busmapPost = {};
+				
+				for (var i=0;i<data.Bus.length;i++)
+					{
+					if (data.Bus[i].a2==null) continue;
+					if (data.Bus[i].a1!=null)
+						{
+						var arrA1 = data.Bus[i].a1.split(',');
+						if (arrA1[3]=="2" || arrA1[4]=="99") continue;
+						};
+					var arrA2 = data.Bus[i].a2.split(',');
+					if (arrA2[3]=="2" || arrA2[4]=="99") continue;
+					
+					if (/^TEST.*$/g.test(data.Bus[i].num)) continue;
+					if (Date.parse("20"+arrA2[11].substr(0,2)+"-"+arrA2[11].substr(2,2)+"-"+arrA2[11].substr(4,2)+"T"+arrA2[11].substr(6,2)+":"+arrA2[11].substr(8,2)+":"+arrA2[11].substr(10,2))<okDataMS) continue;
+
+					var busStopId=arrA2[7];
+					if (arrA2[8]=="1" && PathAttrFirstStopIdMap.hasOwnProperty(arrA2[5]) && busStopId==PathAttrFirstStopIdMap[arrA2[5]]) continue;
+					if (VirtualStopMap.hasOwnProperty(busStopId)) busStopId=VirtualStopMap[busStopId];
+					
+					var crowdimg="";
+			        
+					if (data.Bus[i].a3 && data.Bus[i].a3!=null)
+						{
+						var arrA3 = data.Bus[i].a3.split(',');
+						var level=parseInt(arrA3[6],10);
+						
+						if (Date.parse("20"+arrA3[7].substr(0,2)+"-"+arrA3[7].substr(2,2)+"-"+arrA3[7].substr(4,2)+"T"+arrA3[7].substr(6,2)+":"+arrA3[7].substr(8,2)+":"+arrA3[7].substr(10,2))>=okDataMS)
+							{
+							if (level>0)
+								crowdimg="<img border=0 src=\"crowd"+(level-1)+".gif\">";
+							else
+								{
+								var remainingNum=parseInt(arrA3[5],10);
+								if (remainingNum>32) crowdimg="<img border=0 src=\"crowd2.gif\">";
+								else if (remainingNum>22) crowdimg="<img border=0 src=\"crowd1.gif\">";
+								else crowdimg="<img border=0 src=\"crowd0.gif\">";
+								}
+							};
+						};
+				    
+					if (arrA2[8]=="0")
+					   {
+						if (!busmapPost.hasOwnProperty(busStopId)) busmapPost[busStopId]=""; else busmapPost[busStopId]+="<br>";
+						busmapPost[busStopId]+="<img border=0 src=\"bus" + data.Bus[i].type +".gif\"><font style=\"color:darkblue;\">" + data.Bus[i].num + (PathAttrSymbolMap.hasOwnProperty(arrA2[5])?PathAttrSymbolMap[arrA2[5]]:"") + "</font>"+crowdimg;
+					   }
+					else
+					   {
+						if (!busmapPre.hasOwnProperty(busStopId)) busmapPre[busStopId]=""; else busmapPre[busStopId]+="<br>";
+						busmapPre[busStopId]+="<img border=0 src=\"bus" + data.Bus[i].type +".gif\"><font style=\"color:darkblue;\">" + data.Bus[i].num + (PathAttrSymbolMap.hasOwnProperty(arrA2[5])?PathAttrSymbolMap[arrA2[5]]:"") + "</font>"+crowdimg;
+					   };
+					};
+
+				for (var i=0;i<data.Stop.length;i++)
+					{
+					if (data.Stop[i].n1==null) continue;
+					var arrN1 = data.Stop[i].n1.split(',');
+					if (!document.getElementById("tte"+arrN1[1])) continue;
+					var tteHTML="";
+					var movePreToPost=false;
+					
+					if (TTEMap.hasOwnProperty(arrN1[7]))
+						{
+						if (arrN1[7]!="0") movePreToPost=true;
+						tteHTML=TTEMap[arrN1[7]];
+						}
+					else
+						{
+						var tte=parseInt(arrN1[7],10);
+						if (tte>0 && tte<180)
+							tteHTML="將到站";
+						else
+							{
+							movePreToPost=true;
+							tteHTML=Math.floor(tte/60)+"分";
+							}
+						};
+					
+					
+							if (arrN1[3].indexOf("&#x3a;")>-1) if (arrN1[7]=="-1" || parseInt(arrN1[7],10)>5940) tteHTML=arrN1[3]+" 發車"; 
+					
+						
+					if (busmapPre.hasOwnProperty(arrN1[1])) 
+						{
+						if (movePreToPost)
+							tteHTML=tteHTML+"<br>"+busmapPre[arrN1[1]];
+						else
+							tteHTML=busmapPre[arrN1[1]]+"<br>"+tteHTML;
+						};
+					if (busmapPost.hasOwnProperty(arrN1[1])) tteHTML=tteHTML+"<br>"+busmapPost[arrN1[1]];
+					
+					document.getElementById("tte"+arrN1[1]).innerHTML=tteHTML;
+					};
+				};
+			Timer=setTimeout(queryDyna,60000);
+    	}
+	</script>
+</head>
+<body onload="switchDiv();queryDyna();">
+<center>
+<div id="SDIV1" style="display:none;">
+
+	<table class="formattable1">
+	
+		<tr>
+			<th class="title1"><a href="index.jsp" class="title1">行動查詢系統</a></th>
+		</tr>
+    
+		<tr>
+			<th class="title2"><a href="routelist.jsp" class="title2">查詢公車動態資訊</a></th>
+		</tr>
+		<tr>
+			<th class="title3"><a href="routeinfo.jsp?rid=10746">252</a><br><span class="updatetime">(更新時間：<span id="spnUpdateTime"></span>&nbsp;<input type="button" value="立刻更新" onclick="queryDyna();">)</span>
+			</th>
+		</tr>
+	</table>
+    <marquee scrollamount="4" class="marqueetd" width="100%">11&#x2f;10-24&#x6587;&#x5c71;&#x5340;&#x798f;&#x8208;&#x8def;63&#x5df7;&#x4ea4;&#x7ba1;&#x516c;&#x8eca;&#x6539;&#x9053;&#x8a73;&#x516c;&#x904b;&#x8655;&#x7db2;&#x7ad9;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;11&#x2f;8&#x3001;20&#x7e;23&#x3001;29&#x3001;30&#x89c0;&#x5df4;&#x85cd;&#x7dda;&#x53d6;&#x6d88;&#x505c;&#x9760;&#x5713;&#x5c71;&#x98ef;&#x5e97;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;11&#x2f;15-12&#x2f;5&#x4fe1;&#x7fa9;&#x5feb;&#x901f;&#x9053;&#x8def;&#x8def;&#x9762;&#x66f4;&#x65b0;&#x516c;&#x8eca;&#x6539;&#x9053;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;11&#x2f;18-19&#x4fe1;&#x7fa9;&#x5340;&#x5433;&#x8208;&#x8857;284&#x5df7;&#x65bd;&#x5de5;&#x4ea4;&#x7ba1;&#x516c;&#x8eca;&#x6539;&#x9053;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;11&#x2f;22 &#x6210;&#x798f;&#x8def;269&#x5df7;&#x6d3b;&#x52d5;&#x4ea4;&#x7ba1;&#x516c;&#x8eca;&#x6539;&#x9053;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;11&#x2f;21-22&#x5317;&#x6295;&#x5340;&#x4e03;&#x661f;&#x8857;&#x6d3b;&#x52d5;&#x4ea4;&#x7ba1;&#x516c;&#x8eca;&#x6539;&#x9053;&#x8a73;&#x516c;&#x904b;&#x8655;&#x7db2;</marquee>
+
+	<table class="formattable1">
+    
+		<tr>
+			<td>
+				<table border=0 width="100%">
+					
+					<tr>
+						<td width="50%" class="ttegotitle">去程 (往&#x81fa;&#x5317;&#x8eca;&#x7ad9;)</td>
+						<td width="50%" class="ttebacktitle">返程 (往&#x5bcc;&#x5fb7;)</td>
+					</tr>
+					
+					<tr>
+					<td valign=top width="50%">
+
+							<table border=0 width="100%">
+							<tr class="ttego1"><td><a href="stop.jsp?sid=216049">&#x5bcc;&#x5fb7;</a></td><td align=center nowrap id="tte216049"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=216050">&#x8c61;&#x982d;&#x57d4;</a></td><td align=center nowrap id="tte216050"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=216051">&#x842c;&#x798f;&#x6a4b;</a></td><td align=center nowrap id="tte216051"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37881">&#x77f3;&#x58c1;&#x5751;</a></td><td align=center nowrap id="tte37881"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37882">&#x98a8;&#x52d5;&#x77f3;</a></td><td align=center nowrap id="tte37882"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37883">&#x535a;&#x5609;&#x570b;&#x5c0f;</a></td><td align=center nowrap id="tte37883"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37884">&#x6377;&#x904b;&#x6728;&#x67f5;&#x7ad9;</a></td><td align=center nowrap id="tte37884"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37885">&#x6728;&#x67f5;&#x9ad8;&#x5de5;</a></td><td align=center nowrap id="tte37885"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37886">&#x842c;&#x82b3;&#x8def;&#x53e3;</a></td><td align=center nowrap id="tte37886"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37887">&#x842c;&#x58fd;&#x6a4b;&#x982d;&#x28;&#x6728;&#x67f5;&#x29;</a></td><td align=center nowrap id="tte37887"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=188738">&#x6587;&#x5c71;&#x884c;&#x653f;&#x4e2d;&#x5fc3;&#x28;&#x6728;&#x65b0;&#x29;</a></td><td align=center nowrap id="tte188738"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37888">&#x6307;&#x5357;&#x8def;&#x53e3;</a></td><td align=center nowrap id="tte37888"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37889">&#x6728;&#x5357;&#x516c;&#x5712;</a></td><td align=center nowrap id="tte37889"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37890">&#x666f;&#x6587;&#x4e2d;&#x5b78;</a></td><td align=center nowrap id="tte37890"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37891">&#x53f8;&#x6cd5;&#x65b0;&#x6751;</a></td><td align=center nowrap id="tte37891"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37892">&#x5fe0;&#x9806;&#x5edf;</a></td><td align=center nowrap id="tte37892"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37893">&#x570b;&#x6cf0;&#x65b0;&#x6751;&#x28;&#x6728;&#x65b0;&#x29;</a></td><td align=center nowrap id="tte37893"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37894">&#x529b;&#x884c;&#x570b;&#x5c0f;</a></td><td align=center nowrap id="tte37894"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37895">&#x6728;&#x65b0;&#x5e02;&#x5834;</a></td><td align=center nowrap id="tte37895"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37897">&#x666f;&#x7f8e;&#x5973;&#x4e2d;</a></td><td align=center nowrap id="tte37897"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37898">&#x5bf6;&#x9ad8;&#x7522;&#x696d;&#x5712;&#x5340;</a></td><td align=center nowrap id="tte37898"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37899">&#x52a0;&#x6cb9;&#x7ad9;</a></td><td align=center nowrap id="tte37899"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37900">&#x5bf6;&#x6a4b;&#x4e2d;&#x8208;&#x8def;&#x53e3;</a></td><td align=center nowrap id="tte37900"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37901">&#x5317;&#x65b0;&#x516c;&#x5bd3;</a></td><td align=center nowrap id="tte37901"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37902">&#x5317;&#x65b0;&#x570b;&#x5c0f;</a></td><td align=center nowrap id="tte37902"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37903">&#x6377;&#x904b;&#x4e03;&#x5f35;&#x7ad9;</a></td><td align=center nowrap id="tte37903"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37904">&#x65b0;&#x5e97;&#x90f5;&#x5c40;</a></td><td align=center nowrap id="tte37904"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37905">&#x5927;&#x576a;&#x6797;</a></td><td align=center nowrap id="tte37905"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37906">&#x6377;&#x904b;&#x5927;&#x576a;&#x6797;&#x7ad9;</a></td><td align=center nowrap id="tte37906"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37907">&#x6eec;&#x6c5f;&#x4e2d;&#x5b78;</a></td><td align=center nowrap id="tte37907"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37908">&#x6377;&#x904b;&#x666f;&#x7f8e;&#x7ad9;</a></td><td align=center nowrap id="tte37908"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37909">&#x8ca1;&#x653f;&#x5712;&#x5340;</a></td><td align=center nowrap id="tte37909"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37910">&#x842c;&#x9686;</a></td><td align=center nowrap id="tte37910"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37911">&#x6377;&#x904b;&#x842c;&#x9686;&#x7ad9;</a></td><td align=center nowrap id="tte37911"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37912">&#x6b66;&#x529f;&#x570b;&#x5c0f;&#x28;&#x7f85;&#x65af;&#x798f;&#x29;</a></td><td align=center nowrap id="tte37912"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37913">&#x5e2b;&#x5927;&#x5206;&#x90e8;</a></td><td align=center nowrap id="tte37913"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37914">&#x6377;&#x904b;&#x516c;&#x9928;&#x7ad9;</a></td><td align=center nowrap id="tte37914"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37915">&#x53f0;&#x96fb;&#x5927;&#x6a13;</a></td><td align=center nowrap id="tte37915"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37916">&#x6377;&#x904b;&#x53f0;&#x96fb;&#x5927;&#x6a13;&#x7ad9;</a></td><td align=center nowrap id="tte37916"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37917">&#x7f85;&#x65af;&#x798f;&#x6d66;&#x57ce;&#x8857;&#x53e3;</a></td><td align=center nowrap id="tte37917"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37918">&#x7f85;&#x65af;&#x798f;&#x91d1;&#x9580;&#x8857;&#x53e3;</a></td><td align=center nowrap id="tte37918"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37919">&#x6377;&#x904b;&#x53e4;&#x4ead;&#x7ad9;&#x28;&#x7f85;&#x65af;&#x798f;&#x29;</a></td><td align=center nowrap id="tte37919"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37921">&#x7f85;&#x65af;&#x798f;&#x6f6e;&#x5dde;&#x8857;&#x53e3;</a></td><td align=center nowrap id="tte37921"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37923">&#x6377;&#x904b;&#x4e2d;&#x6b63;&#x7d00;&#x5ff5;&#x5802;&#x7ad9;&#x28;&#x7f85;&#x65af;&#x798f;&#x29;</a></td><td align=center nowrap id="tte37923"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37924">&#x81fa;&#x5317;&#x5e02;&#x7acb;&#x5927;&#x5b78;</a></td><td align=center nowrap id="tte37924"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37925">&#x81fa;&#x5317;&#x6cd5;&#x9662;</a></td><td align=center nowrap id="tte37925"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37926">&#x5c0f;&#x5357;&#x9580;&#x28;&#x548c;&#x5e73;&#x9662;&#x5340;&#x29;</a></td><td align=center nowrap id="tte37926"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37927">&#x6377;&#x904b;&#x897f;&#x9580;&#x7ad9;</a></td><td align=center nowrap id="tte37927"></td></tr>
+<tr class="ttego1"><td><a href="stop.jsp?sid=37928">&#x4e2d;&#x83ef;&#x8def;&#x5317;&#x7ad9;</a></td><td align=center nowrap id="tte37928"></td></tr>
+<tr class="ttego2"><td><a href="stop.jsp?sid=37929">&#x81fa;&#x5317;&#x8eca;&#x7ad9;&#x28;&#x91cd;&#x6176;&#x29;</a></td><td align=center nowrap id="tte37929"></td></tr>
+
+							</table>
+						</td>
+					<td valign=top width="50%">
+
+							<table border=0 width="100%">
+							<tr class="tteback1"><td><a href="stop.jsp?sid=218003">&#x81fa;&#x5317;&#x90f5;&#x5c40;&#x28;&#x64ab;&#x81fa;&#x8857;&#x6d0b;&#x6a13;&#x29;</a></td><td align=center nowrap id="tte218003"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37931">&#x4e2d;&#x83ef;&#x8def;&#x5317;&#x7ad9;</a></td><td align=center nowrap id="tte37931"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37932">&#x6377;&#x904b;&#x897f;&#x9580;&#x7ad9;</a></td><td align=center nowrap id="tte37932"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37933">&#x5c0f;&#x5357;&#x9580;&#x28;&#x548c;&#x5e73;&#x9662;&#x5340;&#x29;</a></td><td align=center nowrap id="tte37933"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=142275">&#x6377;&#x904b;&#x5c0f;&#x5357;&#x9580;&#x7ad9;</a></td><td align=center nowrap id="tte142275"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37937">&#x6377;&#x904b;&#x4e2d;&#x6b63;&#x7d00;&#x5ff5;&#x5802;&#x7ad9;&#x28;&#x52de;&#x4fdd;&#x5c40;&#x29;</a></td><td align=center nowrap id="tte37937"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37939">&#x7f85;&#x65af;&#x798f;&#x6f6e;&#x5dde;&#x8857;&#x53e3;</a></td><td align=center nowrap id="tte37939"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=210484">&#x6377;&#x904b;&#x53e4;&#x4ead;&#x7ad9;&#x28;&#x7f85;&#x65af;&#x798f;&#x29;</a></td><td align=center nowrap id="tte210484"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37940">&#x7f85;&#x65af;&#x798f;&#x91d1;&#x9580;&#x8857;&#x53e3;</a></td><td align=center nowrap id="tte37940"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37941">&#x7f85;&#x65af;&#x798f;&#x6d66;&#x57ce;&#x8857;&#x53e3;</a></td><td align=center nowrap id="tte37941"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37942">&#x6377;&#x904b;&#x53f0;&#x96fb;&#x5927;&#x6a13;&#x7ad9;</a></td><td align=center nowrap id="tte37942"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37943">&#x53f0;&#x96fb;&#x5927;&#x6a13;</a></td><td align=center nowrap id="tte37943"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37944">&#x6377;&#x904b;&#x516c;&#x9928;&#x7ad9;</a></td><td align=center nowrap id="tte37944"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37945">&#x5e2b;&#x5927;&#x5206;&#x90e8;</a></td><td align=center nowrap id="tte37945"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37946">&#x6b66;&#x529f;&#x570b;&#x5c0f;&#x28;&#x7f85;&#x65af;&#x798f;&#x29;</a></td><td align=center nowrap id="tte37946"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37947">&#x6377;&#x904b;&#x842c;&#x9686;&#x7ad9;</a></td><td align=center nowrap id="tte37947"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37948">&#x842c;&#x9686;</a></td><td align=center nowrap id="tte37948"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37949">&#x8ca1;&#x653f;&#x5712;&#x5340;</a></td><td align=center nowrap id="tte37949"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37950">&#x6377;&#x904b;&#x666f;&#x7f8e;&#x7ad9;</a></td><td align=center nowrap id="tte37950"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37951">&#x6eec;&#x6c5f;&#x4e2d;&#x5b78;</a></td><td align=center nowrap id="tte37951"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37952">&#x6377;&#x904b;&#x5927;&#x576a;&#x6797;&#x7ad9;</a></td><td align=center nowrap id="tte37952"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37953">&#x5927;&#x576a;&#x6797;</a></td><td align=center nowrap id="tte37953"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37954">&#x65b0;&#x5e97;&#x90f5;&#x5c40;</a></td><td align=center nowrap id="tte37954"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37955">&#x6377;&#x904b;&#x4e03;&#x5f35;&#x7ad9;</a></td><td align=center nowrap id="tte37955"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37956">&#x5317;&#x65b0;&#x570b;&#x5c0f;</a></td><td align=center nowrap id="tte37956"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37958">&#x5bf6;&#x6a4b;&#x4e2d;&#x8208;&#x8def;&#x53e3;</a></td><td align=center nowrap id="tte37958"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37959">&#x5bf6;&#x6a4b;&#x4e2d;&#x8208;&#x8def;&#x53e3;&#x4e00;</a></td><td align=center nowrap id="tte37959"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=56834">&#x52a0;&#x6cb9;&#x7ad9;</a></td><td align=center nowrap id="tte56834"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37960">&#x5bf6;&#x9ad8;&#x7522;&#x696d;&#x5712;&#x5340;</a></td><td align=center nowrap id="tte37960"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37961">&#x666f;&#x7f8e;&#x5973;&#x4e2d;</a></td><td align=center nowrap id="tte37961"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37963">&#x6728;&#x65b0;&#x5e02;&#x5834;</a></td><td align=center nowrap id="tte37963"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37964">&#x529b;&#x884c;&#x570b;&#x5c0f;</a></td><td align=center nowrap id="tte37964"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37965">&#x570b;&#x6cf0;&#x65b0;&#x6751;&#x28;&#x6728;&#x65b0;&#x29;</a></td><td align=center nowrap id="tte37965"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37966">&#x5fe0;&#x9806;&#x5edf;</a></td><td align=center nowrap id="tte37966"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37967">&#x53f8;&#x6cd5;&#x65b0;&#x6751;</a></td><td align=center nowrap id="tte37967"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37968">&#x666f;&#x6587;&#x4e2d;&#x5b78;</a></td><td align=center nowrap id="tte37968"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37969">&#x6728;&#x5357;&#x516c;&#x5712;</a></td><td align=center nowrap id="tte37969"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37970">&#x6307;&#x5357;&#x8def;&#x53e3;</a></td><td align=center nowrap id="tte37970"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=188739">&#x6587;&#x5c71;&#x884c;&#x653f;&#x4e2d;&#x5fc3;&#x28;&#x6728;&#x65b0;&#x29;</a></td><td align=center nowrap id="tte188739"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37971">&#x842c;&#x58fd;&#x6a4b;&#x982d;&#x28;&#x6728;&#x67f5;&#x29;</a></td><td align=center nowrap id="tte37971"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37972">&#x842c;&#x82b3;&#x8def;&#x53e3;</a></td><td align=center nowrap id="tte37972"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37973">&#x6728;&#x67f5;&#x9ad8;&#x5de5;</a></td><td align=center nowrap id="tte37973"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37974">&#x6377;&#x904b;&#x6728;&#x67f5;&#x7ad9;</a></td><td align=center nowrap id="tte37974"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37975">&#x535a;&#x5609;&#x570b;&#x5c0f;</a></td><td align=center nowrap id="tte37975"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=37976">&#x98a8;&#x52d5;&#x77f3;</a></td><td align=center nowrap id="tte37976"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=37977">&#x77f3;&#x58c1;&#x5751;</a></td><td align=center nowrap id="tte37977"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=216052">&#x842c;&#x798f;&#x6a4b;</a></td><td align=center nowrap id="tte216052"></td></tr>
+<tr class="tteback2"><td><a href="stop.jsp?sid=216053">&#x8c61;&#x982d;&#x57d4;</a></td><td align=center nowrap id="tte216053"></td></tr>
+<tr class="tteback1"><td><a href="stop.jsp?sid=216054">&#x5bcc;&#x5fb7;</a></td><td align=center nowrap id="tte216054"></td></tr>
+
+							</table>
+						</td>
+					
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+	<table border=0 width="100%">
+        <tr>
+            <td colspan=3 align=center>
+                <img src="bus0.gif" border=0>:一般公車
+            </td>
+            <td colspan=3 align=center>
+                <img src="bus1.gif" border=0>:低地板公車
+            </td>
+            <td colspan=3 align=center>
+                <img src="bus2.gif" border=0>:大復康巴士
+            </td>
+            <td colspan=3 align=center>
+                <img src="bus6.gif" border=0>:無障礙中巴
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan=4 align=center>
+                <img src="crowd0.gif" border=0>:舒適
+            </td>
+            <td colspan=4 align=center>
+                <img src="crowd1.gif" border=0>:中等
+            </td>
+            <td colspan=4 align=center>
+                <img src="crowd2.gif" border=0>:擁擠
+            </td>
+        </tr>
+        
+　　</table>
+</div>
+	 
+</body>
+</html>

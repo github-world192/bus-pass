@@ -1,0 +1,1322 @@
+[
+    {
+        "StopUID": "TPE11455",
+        "StopID": "11455",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE11547",
+        "StopID": "11547",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE11992",
+        "StopID": "11992",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE12014",
+        "StopID": "12014",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE125224",
+        "StopID": "125224",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE125292",
+        "StopID": "125292",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE13288",
+        "StopID": "13288",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.537808,
+            "PositionLat": 25.0084374367022,
+            "GeoHash": "wsqqm8ths"
+        },
+        "StopAddress": "台北市文山區羅斯福路五段72號前(向南)",
+        "Bearing": "S",
+        "StationID": "1165603295",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE14263",
+        "StopID": "14263",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE14312",
+        "StopID": "14312",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE14440",
+        "StopID": "14440",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE14499",
+        "StopID": "14499",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE14618",
+        "StopID": "14618",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE14651",
+        "StopID": "14651",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE14740",
+        "StopID": "14740",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.53901,
+            "PositionLat": 25.006894,
+            "GeoHash": "wsqqm8q58"
+        },
+        "StopAddress": "台北市文山區羅斯福路五段49號前(向北)",
+        "Bearing": "N",
+        "StationID": "1165603296",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE14779",
+        "StopID": "14779",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路公車專用道(向南)",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE15025",
+        "StopID": "15025",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE15029",
+        "StopID": "15029",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE15373",
+        "StopID": "15373",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE15380",
+        "StopID": "15380",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE17092",
+        "StopID": "17092",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE17178",
+        "StopID": "17178",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE17228",
+        "StopID": "17228",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE17270",
+        "StopID": "17270",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE17351",
+        "StopID": "17351",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE17378",
+        "StopID": "17378",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE17480",
+        "StopID": "17480",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE17528",
+        "StopID": "17528",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE17838",
+        "StopID": "17838",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE17873",
+        "StopID": "17873",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE18014",
+        "StopID": "18014",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE18028",
+        "StopID": "18028",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE18475",
+        "StopID": "18475",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.537808,
+            "PositionLat": 25.0084374367022,
+            "GeoHash": "wsqqm8ths"
+        },
+        "StopAddress": "台北市文山區羅斯福路五段72號前(向南)",
+        "Bearing": "S",
+        "StationID": "1165603295",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE18810",
+        "StopID": "18810",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE18854",
+        "StopID": "18854",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE191437",
+        "StopID": "191437",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.537808,
+            "PositionLat": 25.0084374367022,
+            "GeoHash": "wsqqm8ths"
+        },
+        "StopAddress": "台北市文山區羅斯福路五段72號前(向南)",
+        "Bearing": "S",
+        "StationID": "1165603295",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE19937",
+        "StopID": "19937",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE19944",
+        "StopID": "19944",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE20129",
+        "StopID": "20129",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE20238",
+        "StopID": "20238",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE205281",
+        "StopID": "205281",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.53901,
+            "PositionLat": 25.006894,
+            "GeoHash": "wsqqm8q58"
+        },
+        "StopAddress": "台北市文山區羅斯福路五段49號前(向北)",
+        "Bearing": "N",
+        "StationID": "1165603296",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE205303",
+        "StopID": "205303",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路公車專用道(向南)",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE22254",
+        "StopID": "22254",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE22362",
+        "StopID": "22362",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE27573",
+        "StopID": "27573",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE27602",
+        "StopID": "27602",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE35536",
+        "StopID": "35536",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE35559",
+        "StopID": "35559",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE37841",
+        "StopID": "37841",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE37849",
+        "StopID": "37849",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE37913",
+        "StopID": "37913",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE37945",
+        "StopID": "37945",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE39509",
+        "StopID": "39509",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE39522",
+        "StopID": "39522",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE43116",
+        "StopID": "43116",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE43134",
+        "StopID": "43134",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE43244",
+        "StopID": "43244",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE43300",
+        "StopID": "43300",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE43419",
+        "StopID": "43419",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538470307254,
+            "PositionLat": 25.0076706783786,
+            "GeoHash": "wsqqm8t85"
+        },
+        "StopAddress": "羅斯福五段47號",
+        "Bearing": "NW",
+        "StationID": "1000036",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE43488",
+        "StopID": "43488",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.538064047069,
+            "PositionLat": 25.0081406778406,
+            "GeoHash": "wsqqm8t6f"
+        },
+        "StopAddress": "羅斯福路五段上近萬盛街口同向",
+        "Bearing": "SE",
+        "StationID": "2430",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    },
+    {
+        "StopUID": "TPE45244",
+        "StopID": "45244",
+        "AuthorityID": "004",
+        "StopName": {
+            "Zh_tw": "師大分部",
+            "En": "National Taiwan Normal University Branch"
+        },
+        "StopPosition": {
+            "PositionLon": 121.537808,
+            "PositionLat": 25.0084374367022,
+            "GeoHash": "wsqqm8ths"
+        },
+        "StopAddress": "台北市文山區羅斯福路五段72號前(向南)",
+        "Bearing": "S",
+        "StationID": "1165603295",
+        "City": "Taipei",
+        "CityCode": "TPE",
+        "LocationCityCode": "TPE",
+        "UpdateTime": "2025-11-19T09:07:51+08:00",
+        "VersionID": 6364
+    }
+]
