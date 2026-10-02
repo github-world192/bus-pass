@@ -1,9 +1,11 @@
+import os
+
 import requests
 import json
 
 # ========== 設定區 (請填入您的 TDX 金鑰) ==========
 CLIENT_ID = '41347902S-573d3f05-4c94-4a27'
-CLIENT_SECRET = '1d257004-04ad-4082-8987-c37629240044'
+CLIENT_SECRET = os.environ["TDX_CLIENT_SECRET"]
 # ===============================================
 
 def get_auth_token():

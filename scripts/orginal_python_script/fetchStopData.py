@@ -1,3 +1,5 @@
+import os
+
 import requests
 import json
 import time
@@ -6,7 +8,7 @@ import logging
 
 # ========== 設定區 ==========
 CLIENT_ID = '41347902S-573d3f05-4c94-4a27'
-CLIENT_SECRET = '1d257004-04ad-4082-8987-c37629240044'
+CLIENT_SECRET = os.environ["TDX_CLIENT_SECRET"]
 OUTPUT_FILE = 'stop_id_map.json'
 # ==========================
 
